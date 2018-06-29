@@ -3,13 +3,9 @@ package com.company;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class integerValidador implements rules {
-    private rules next;
+public class IntegerValidador implements ValidatorInputs {
+     ValidatorInputs next;
 
-    @Override
-    public rules getNext() {
-        return next;
-    }
     @Override
     public void isValidate(String n) {
         Pattern p = Pattern.compile("\\d");
@@ -19,17 +15,17 @@ public class integerValidador implements rules {
             count++;
         }
         if(count!=n.length()){
+            System.out.print("no es digito\n");
             next.isValidate(n);
         }else {
             System.out.print("digito\n");
+//            next.isValidate(n);
         }
 
     }
-
     @Override
-    public void seNext(rules aprobado) {
-        next=aprobado;
+    public void setNext(ValidatorInputs nextAprobado) {
+        this.next=nextAprobado;
     }
-
 
 }

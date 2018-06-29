@@ -1,25 +1,24 @@
 package com.company;
 
-public class emphyValidador implements rules {
-    private rules next;
+public class EmphyValidador implements ValidatorInputs {
+    ValidatorInputs next;
 
-    @Override
-    public rules getNext() {
-        return next;
-    }
 
     @Override
     public void isValidate(String n) {
-        if(n.length()<0){
-           next.isValidate(n);
-        }else{
+        if (n.length() < 0) {
+            System.out.println("el input esta vacio\n");
+            next.isValidate(n);
+        } else {
             System.out.println("el input no esta vacio\n");
+            next.isValidate(n);
         }
 
     }
-
     @Override
-    public void seNext(rules aprobado) {
-        next=aprobado;
+    public void setNext(ValidatorInputs nextAprobado) {
+
+        this.next = nextAprobado;
     }
+
 }

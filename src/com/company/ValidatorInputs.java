@@ -1,9 +1,9 @@
 package com.company;
 
-interface Rules {
+public interface ValidatorInputs {
 
-    public void isValidate(String n);
-     public void setNext(Rules aprobado);
-     Rules getNext();
+    void isValidate(String n);
+    void setNext(ValidatorInputs nextAprobado);
+
 
 }
