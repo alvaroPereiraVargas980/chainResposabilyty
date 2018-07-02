@@ -2,6 +2,9 @@ package com.company;
 
 public class LengthValidador implements ValidatorInputs {
      ValidatorInputs next;
+     public LengthValidador(ValidatorInputs nextAprobado){
+         this.next=nextAprobado;
+     }
 
     @Override
     public void isValidate(String n) {
@@ -11,13 +14,9 @@ public class LengthValidador implements ValidatorInputs {
             next.isValidate(n);
         }else{
             System.out.println("la cadena tiene mas de 2000 caracteres");
-            //next.isValidate(n);
+//            next.isValidate(n);
         }
     }
-    @Override
-    public void setNext(ValidatorInputs nextAprobado) {
 
-        this.next=nextAprobado;
-    }
 
 }

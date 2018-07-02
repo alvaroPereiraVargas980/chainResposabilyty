@@ -2,6 +2,9 @@ package com.company;
 
 public class EmphyValidador implements ValidatorInputs {
     ValidatorInputs next;
+    public EmphyValidador(ValidatorInputs nextAprobado){
+        this.next= nextAprobado;
+    }
 
 
     @Override
@@ -11,14 +14,9 @@ public class EmphyValidador implements ValidatorInputs {
             next.isValidate(n);
         } else {
             System.out.println("el input no esta vacio\n");
-            next.isValidate(n);
+
         }
 
-    }
-    @Override
-    public void setNext(ValidatorInputs nextAprobado) {
-
-        this.next = nextAprobado;
     }
 
 }

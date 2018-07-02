@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 
 public class IntegerValidador implements ValidatorInputs {
      ValidatorInputs next;
+     public IntegerValidador(ValidatorInputs nextAprobado){
+         this.next=nextAprobado;
+
+     }
 
     @Override
     public void isValidate(String n) {
@@ -23,9 +27,6 @@ public class IntegerValidador implements ValidatorInputs {
         }
 
     }
-    @Override
-    public void setNext(ValidatorInputs nextAprobado) {
-        this.next=nextAprobado;
-    }
+
 
 }
